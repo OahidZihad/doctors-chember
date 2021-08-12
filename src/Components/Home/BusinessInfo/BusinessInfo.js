@@ -15,7 +15,7 @@ const infosData = [
   },
   {
     title: "Visit Our Location",
-    description: "Shukhnagar, Gaibandha - 5700",
+    description: "Shukhnagar, Gaibandha",
     icon: faMapMarker,
     background: "dark",
   },
@@ -28,10 +28,12 @@ const infosData = [
 ];
 const BusinessInfo = () => {
   return (
-    <section className="row">
-      {infosData.map((info) => (
-        <InfoCard info={info}></InfoCard>
-      ))}
+    <section className="d-flex justify-content-center">
+      <div className="w-75 row">
+        {infosData.map((info) => (
+          <InfoCard info={info}></InfoCard>
+        ))}
+      </div>
     </section>
   );
 };
