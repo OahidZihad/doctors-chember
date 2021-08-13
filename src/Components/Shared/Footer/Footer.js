@@ -7,6 +7,7 @@ import {
   faGooglePlus,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+
 library.add(faFacebook, faGooglePlus, faTwitter);
 
 const Footer = () => {
@@ -92,8 +93,8 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <footer className="copyRight text-center">
-          Copyright {new Date().getFullYear()} All Rights Reserved
+        <footer className="text-center mt-5 pt-5">
+          <p>Copyright {new Date().getFullYear()} All Rights Reserved</p>
         </footer>
       </div>
     </section>
