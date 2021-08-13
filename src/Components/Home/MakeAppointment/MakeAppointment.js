@@ -15,9 +15,12 @@ const MakeAppointment = () => {
           />
         </div>
         <div className="col-md-7">
-          <h6 className="mt-5 pt-2" style={{ color: "#6ACECE", opacity: ".8" }}>
+          <h5
+            className="mt-5 pt-2"
+            style={{ color: "#6ACECE", opacity: ".8", fontWeight: "bold" }}
+          >
             APPOINTMENT
-          </h6>
+          </h5>
           <h2 className="text-white mt-4" style={{ opacity: ".8" }}>
             Make an appointment <br />
             Today

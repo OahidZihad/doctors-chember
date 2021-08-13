@@ -35,9 +35,12 @@ const Testimonial = () => {
       <div className="d-flex justify-content-center mt-5">
         <div className="w-75 row">
           <div className="col-md-4 mt-5">
-            <h6 className="mt-3" style={{ color: "#6ACECE" }}>
+            <h5
+              className="mt-3"
+              style={{ color: "#6ACECE", fontWeight: "bold" }}
+            >
               TESTIMONIAL
-            </h6>
+            </h5>
             <h2 className="mt-3" style={{ color: "#3E465A" }}>
               What's Our Patients <br />
               Says
