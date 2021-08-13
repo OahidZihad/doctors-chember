@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.btn-brand {
+  background-image: linear-gradient(75deg, #17bd9c, #0fcfec);
+  border-color: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-brand {
+  color: #1cc7c1;
 }
