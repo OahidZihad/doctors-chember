@@ -7,12 +7,7 @@ const MakeAppointment = () => {
     <section className="d-flex justify-content-center appointment-section">
       <div className="w-75 row appointment">
         <div className="col-md-5">
-          <img
-            className="appointment-img"
-            // style={{ height: "133%", width: "100%" }}
-            src={doctor}
-            alt=""
-          />
+          <img className="appointment-img" src={doctor} alt="" />
         </div>
         <div className="col-md-7">
           <h5

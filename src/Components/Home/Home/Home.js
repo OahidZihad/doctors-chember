@@ -1,5 +1,6 @@
 import React from "react";
 import BlogNews from "../BlogNews/BlogNews";
+import ContactUs from "../ContactUs/ContactUs";
 import FeaturedService from "../FeaturedService/FeaturedService";
 import Header from "../Header/Header";
 import MakeAppointment from "../MakeAppointment/MakeAppointment";
@@ -17,6 +18,7 @@ const Home = () => {
       <Testimonial></Testimonial>
       <BlogNews></BlogNews>
       <OurDoctors></OurDoctors>
+      <ContactUs></ContactUs>
     </div>
   );
 };
