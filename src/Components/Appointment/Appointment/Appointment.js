@@ -8,7 +8,6 @@ const Appointment = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    console.log(date);
   };
   return (
     <div>
