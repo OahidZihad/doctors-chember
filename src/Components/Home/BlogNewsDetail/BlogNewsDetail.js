@@ -3,7 +3,7 @@ import React from "react";
 const BlogNewsDetail = (props) => {
   const { img, description, name, date, title } = props.blog;
   return (
-    <div className="card col-md-4">
+    <div className="card col-md-4 card-testimonial">
       <div className="d-flex justify-content-center">
         <div className="mx-3 mt-4 mb-4">
           <img

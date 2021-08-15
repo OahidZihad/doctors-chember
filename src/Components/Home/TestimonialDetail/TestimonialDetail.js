@@ -4,7 +4,7 @@ import "./TestimonialDetail.css";
 const TestimonialDetail = (props) => {
   const { description, img, name, address } = props.testimonial;
   return (
-    <div className="card col-md-4">
+    <div className="card col-md-4 card-testimonial">
       <div className="card-body">
         <p className="card-text">{description}</p>
       </div>

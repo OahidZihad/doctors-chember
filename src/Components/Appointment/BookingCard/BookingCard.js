@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppointmentForm from "../../AppointmentForm/AppointmentForm";
+import AppointmentForm from "../AppointmentForm/AppointmentForm";
 
 const BookingCard = ({ booking, date }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ const BookingCard = ({ booking, date }) => {
   }
   return (
     <div className="col-md-4">
-      <div className="card p-3 mt-5" style={{ width: "100%" }}>
+      <div className="card p-3 mt-5 card-testimonial" style={{ width: "100%" }}>
         <div className="card-body text-center">
           <h5 className="card-title text-brand">{booking.subject}</h5>
           <h6>{booking.visitingHour}</h6>
