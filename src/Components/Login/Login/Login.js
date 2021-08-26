@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import loginBg from "../../../images/Group 140.png";
 import { useForm } from "react-hook-form";
 import firebase from "firebase/app";
-import "firebase/auth";
 import firebaseConfig from "./firebase.config";
+import { UserContext } from "../../../App";
+import { useHistory, useLocation } from "react-router-dom";
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
 const Login = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggedInUser);
+  const history = useHistory();
+  const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
+
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
     isSignedIn: false,
@@ -47,7 +54,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (user) => {
+  const onSubmit = (user, event) => {
     if (newUser && user.email && user.password) {
       firebase
         .auth()
@@ -74,9 +81,16 @@ const Login = () => {
         .signInWithEmailAndPassword(user.email, user.password)
         .then((res) => {
           const newUserInfo = { ...user };
+
+          newUserInfo.isSignedIn = true;
+          newUserInfo.name = res.user.displayName;
+
           newUserInfo.error = "";
           newUserInfo.success = true;
           setUser(newUserInfo);
+          setLoggedInUser(newUserInfo);
+          history.replace(from);
+          setUserToken();
           console.log("sign in user info", res.user);
         })
         .catch((error) => {
@@ -86,8 +100,20 @@ const Login = () => {
           setUser(newUserInfo);
         });
     }
-    // event.preventDefault(); // submit korar por page reload hoy...
+    event.preventDefault(); // submit korar por page reload hoy...
     // sei reload k bondho kortei preventDefault() function use kora hoy
+  };
+
+  const setUserToken = () => {
+    firebase
+      .auth()
+      .currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        sessionStorage.setItem("token", idToken);
+      })
+      .catch(function (error) {
+        // Handle error
+      });
   };
 
   const updateUserName = (name) => {

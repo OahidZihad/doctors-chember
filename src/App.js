@@ -3,25 +3,41 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
 import Appointment from "./Components/Appointment/Appointment/Appointment";
 import Login from "./Components/Login/Login/Login";
+import { createContext, useState } from "react";
+import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
+import Test from "./Components/Test/Test";
+import Test2 from "./Components/Test2/Test2";
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState();
+  console.log(loggedInUser);
   return (
-    <Router>
-      <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/appointment">
-          <Appointment></Appointment>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Switch>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <PrivateRoute path="/appointment">
+            <Appointment></Appointment>
+          </PrivateRoute>
+          <PrivateRoute path="/test">
+            <Test></Test>
+          </PrivateRoute>
+          <PrivateRoute path="/test2">
+            <Test2></Test2>
+          </PrivateRoute>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
