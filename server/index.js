@@ -1,5 +1,14 @@
 const express = require("express");
 const app = express();
+
+const cors = require("cors");
+app.use(cors());
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+
+require("dotenv").config();
+
 const port = 5000;
 
 const { MongoClient } = require("mongodb");
@@ -15,6 +24,7 @@ client.connect((err) => {
 
   app.post("/addAppointment", (req, res) => {
     const appointment = req.body;
+    console.log(appointment);
     appointmentCollection.insertOne(appointment).then((result) => {
       res.send(result.insertedCount);
     });
