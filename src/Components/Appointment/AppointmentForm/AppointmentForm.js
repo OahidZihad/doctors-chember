@@ -34,7 +34,8 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      // .then((res) => res.json())         eikhane res.json() likhle alert kaj kore na
+      .then((res) => res.json())
+      // eikhane res.json() likhle alert kaj kore na
       .then((success) => {
         if (success) {
           closeModal();

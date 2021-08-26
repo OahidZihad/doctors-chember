@@ -24,10 +24,20 @@ client.connect((err) => {
 
   app.post("/addAppointment", (req, res) => {
     const appointment = req.body;
-    console.log(appointment);
     appointmentCollection.insertOne(appointment).then((result) => {
       res.send(result.insertedCount);
     });
+  });
+
+  app.post("/appointmentsByDate", (req, res) => {
+    const date = req.body;
+    console.log(date.date);
+    appointmentCollection
+      .find({ date: date.date })
+      .toArray((err, documents) => {
+        console.log(documents);
+        res.send(documents);
+      });
   });
 });
 
