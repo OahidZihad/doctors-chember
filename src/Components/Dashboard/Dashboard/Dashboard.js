@@ -10,11 +10,11 @@ const containerStyle = {
 };
 
 const Dashboard = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date().toDateString());
   const [appointments, setAppointments] = useState([]);
 
   const handleDateChange = (date) => {
-    setSelectedDate(date);
+    setSelectedDate(date.toDateString());
   };
 
   useEffect(() => {
