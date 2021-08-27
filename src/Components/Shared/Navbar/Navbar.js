@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../../../App";
 
 const Navbar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+  const history = useHistory();
+  const handleHome = () => {
+    history.push("/home");
+  };
   return (
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -25,7 +31,12 @@ const Navbar = () => {
           </div>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link ms-5 active" aria-current="page" href="#">
+              <a
+                class="nav-link ms-5 active"
+                aria-current="page"
+                onClick={handleHome}
+                style={{ cursor: "pointer" }}
+              >
                 Home
               </a>
             </li>
@@ -35,22 +46,22 @@ const Navbar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link ms-5" href="#">
+              <a class="nav-link ms-5" href="#services">
                 Dental Services
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link ms-5 text-white" href="#">
+              <a class="nav-link ms-5 text-white" href="#reviews">
                 Reviews
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link ms-5 text-white" href="#">
+              <a class="nav-link ms-5 text-white" href="#blog">
                 Blog
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link ms-5 text-white" href="#">
+              <a class="nav-link ms-5 text-white" href="#contactUs">
                 Contact Us
               </a>
             </li>

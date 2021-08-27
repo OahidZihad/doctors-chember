@@ -30,7 +30,7 @@ const blogData = [
 ];
 const BlogNews = () => {
   return (
-    <section>
+    <section id="blog">
       <div className="mt-5 pt-5">
         <div>
           <h5

@@ -27,7 +27,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="d-flex justify-content-center mt-5 pt-5">
+    <section id="contactUs" className="d-flex justify-content-center mt-5 pt-5">
       <div className="w-75 contact-us">
         <div className="text-center mt-5" style={{ opacity: ".9" }}>
           <h5 style={{ color: "#6ACECE" }}>CONTACT US</h5>

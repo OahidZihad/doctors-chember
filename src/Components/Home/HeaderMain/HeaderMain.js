@@ -1,7 +1,13 @@
 import React from "react";
 import chair from "../../../images/chair.png";
+import { useHistory } from "react-router-dom";
 
 const HeaderMain = () => {
+  const history = useHistory();
+
+  function handleAppointment() {
+    history.push("/appointment");
+  }
   return (
     <main style={{ height: "600px" }} className="row d-flex align-items-center">
       <div className="col-md-4 offset-md-1">
@@ -14,7 +20,9 @@ const HeaderMain = () => {
           quaerat debitis repellendus deserunt fugiat! Labore repellendus quam
           ab autem adipisci culpa minima deserunt.
         </p>
-        <button className="btn btn-primary">GET APPOINTMENT</button>
+        <button className="btn btn-primary" onClick={handleAppointment}>
+          GET APPOINTMENT
+        </button>
       </div>
       <div className="col-md-6">
         <img src={chair} alt="" className="img-fluid" />

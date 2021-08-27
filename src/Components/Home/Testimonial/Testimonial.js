@@ -31,7 +31,7 @@ const testimonialData = [
 
 const Testimonial = () => {
   return (
-    <section>
+    <section id="reviews">
       <div className="d-flex justify-content-center mt-5">
         <div className="w-75 row">
           <div className="col-md-4 mt-5">
