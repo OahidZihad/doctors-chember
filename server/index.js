@@ -22,9 +22,21 @@ client.connect((err) => {
     .db("doctorsChember")
     .collection("appointments");
 
+  const contactUsCollection = client
+    .db("doctorsChember")
+    .collection("contacts");
+
   app.post("/addAppointment", (req, res) => {
     const appointment = req.body;
     appointmentCollection.insertOne(appointment).then((result) => {
+      res.send(result.insertedCount);
+    });
+  });
+
+  app.post("/addContactUs", (req, res) => {
+    const contactDetails = req.body;
+    console.log(contactDetails);
+    contactUsCollection.insertOne(contactDetails).then((result) => {
       res.send(result.insertedCount);
     });
   });
