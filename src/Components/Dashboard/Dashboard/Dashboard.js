@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import AppointmentsByDate from "../AppointmentsByDate/AppointmentsByDate";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../../Shared/Sidebar/Sidebar";
 
 const containerStyle = {
   backgroundColor: "#F4FDFB",
-  height: "100%",
+  height: "100vh",
 };
 
 const Dashboard = () => {
@@ -35,7 +35,7 @@ const Dashboard = () => {
         <div className="col-md-2">
           <Sidebar></Sidebar>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-5 d-flex justify-content-center">
           <Calendar onChange={handleDateChange} value={new Date()} />
         </div>
         <div className="col-md-5">

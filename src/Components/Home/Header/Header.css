@@ -14,3 +14,25 @@
   background-color: #3a4256;
   z-index: -50;
 }
+
+.custom-shape-divider-top-1630174534 {
+  position: absolute;
+  top: -90px;
+  left: 0;
+  width: 30%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1630174534 svg {
+  z-index: -1;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 299px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1630174534 .shape-fill {
+  fill: #3a4256;
+}

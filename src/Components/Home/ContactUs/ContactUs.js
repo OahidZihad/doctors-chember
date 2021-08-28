@@ -21,7 +21,8 @@ const ContactUs = () => {
       // eikhane res.json() likhle alert kaj kore na
       .then((success) => {
         if (success) {
-          alert("Appointment Created Successfully");
+          alert("Thanks! We get your message");
+          window.location.reload();
         }
       });
   };

@@ -20,7 +20,11 @@ const HeaderMain = () => {
           quaerat debitis repellendus deserunt fugiat! Labore repellendus quam
           ab autem adipisci culpa minima deserunt.
         </p>
-        <button className="btn btn-primary" onClick={handleAppointment}>
+        <button
+          className="btn btn-brand"
+          style={{ color: "white" }}
+          onClick={handleAppointment}
+        >
           GET APPOINTMENT
         </button>
       </div>

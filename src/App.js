@@ -8,6 +8,7 @@ import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
 import Test from "./Components/Test/Test";
 import Test2 from "./Components/Test2/Test2";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import Patients from "./Components/Dashboard/Patients/Patients";
 
 export const UserContext = createContext();
 
@@ -33,8 +34,8 @@ function App() {
           <PrivateRoute path="/dashboard/appointment">
             <Dashboard></Dashboard>
           </PrivateRoute>
-          <PrivateRoute path="/test2">
-            <Test2></Test2>
+          <PrivateRoute path="/doctor/patients">
+            <Patients></Patients>
           </PrivateRoute>
         </Switch>
       </Router>

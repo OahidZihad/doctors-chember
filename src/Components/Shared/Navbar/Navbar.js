@@ -9,6 +9,9 @@ const Navbar = () => {
   const handleHome = () => {
     history.push("/home");
   };
+  const handleDashboard = () => {
+    history.push("/dashboard/appointment");
+  };
   return (
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -40,14 +43,19 @@ const Navbar = () => {
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link ms-5" href="#">
-                About
-              </a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link ms-5" href="#services">
                 Dental Services
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link ms-5"
+                onClick={handleDashboard}
+                style={{ cursor: "pointer" }}
+              >
+                Dashboard
               </a>
             </li>
             <li class="nav-item">

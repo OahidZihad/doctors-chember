@@ -25,8 +25,11 @@ const MakeAppointment = () => {
             the readable <br /> content of a page when looking at its
           </p>
           <button
-            className="btn btn-primary mt-3 mb-3"
-            style={{ opacity: ".8" }}
+            className="btn btn-brand mt-3 mb-3"
+            style={{
+              opacity: ".99",
+              color: "white",
+            }}
           >
             Learn More
           </button>

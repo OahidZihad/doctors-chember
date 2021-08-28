@@ -28,7 +28,9 @@ const FeaturedService = () => {
             soluta. necessitatibus quia sed nisi ut aliquid fugiat, ab itaque
             eligendi soluta. Expedita voluptate amet, quis quod
           </p>
-          <button className="btn btn-primary mt-4">Learn More</button>
+          <button style={{ color: "white" }} className="btn btn-brand mt-4">
+            Learn More
+          </button>
         </div>
       </div>
     </section>
