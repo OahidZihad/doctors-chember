@@ -9,6 +9,7 @@ import Test from "./Components/Test/Test";
 import Test2 from "./Components/Test2/Test2";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import Patients from "./Components/Dashboard/Patients/Patients";
+import AddDoctor from "./Components/Dashboard/AddDoctor/AddDoctor";
 
 export const UserContext = createContext();
 
@@ -36,6 +37,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/doctor/patients">
             <Patients></Patients>
+          </PrivateRoute>
+          <PrivateRoute path="/doctor/addDoctor">
+            <AddDoctor></AddDoctor>
           </PrivateRoute>
         </Switch>
       </Router>

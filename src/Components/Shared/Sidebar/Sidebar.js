@@ -8,6 +8,7 @@ import {
   faCalendar,
   faGripHorizontal,
   faUsers,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 
@@ -28,6 +29,10 @@ const Sidebar = () => {
 
   const handlePrescriptions = () => {
     history.push("/doctor/prescriptions");
+  };
+
+  const handleAddDoctor = () => {
+    history.push("/doctor/addDoctor");
   };
 
   const handleSettings = () => {
@@ -73,6 +78,15 @@ const Sidebar = () => {
             onClick={handlePrescriptions}
           >
             <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
+          </div>
+        </li>
+        <li>
+          <div
+            style={{ cursor: "pointer" }}
+            className="text-white"
+            onClick={handleAddDoctor}
+          >
+            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
           </div>
         </li>
         <li>

@@ -7,6 +7,10 @@ app.use(cors());
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+const fileUpload = require("express-fileupload");
+app.use(express.static("doctors"));
+app.use(fileUpload());
+
 require("dotenv").config();
 
 const port = 5000;
@@ -50,6 +54,13 @@ client.connect((err) => {
         console.log(documents);
         res.send(documents);
       });
+  });
+
+  app.post("/addADoctor", (req, res) => {
+    const fileName = req.files.file;
+    const name = req.files.name;
+    const email = req.files.email;
+    console.log(name, email, fileName);
   });
 });
 

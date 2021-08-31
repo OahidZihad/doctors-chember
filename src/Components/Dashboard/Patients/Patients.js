@@ -23,7 +23,7 @@ const Patients = () => {
   }, [selectedDate]);
   return (
     <section>
-      <div className="container-fluid row">
+      <div className="row">
         <div className="col-md-2">
           <Sidebar></Sidebar>
         </div>

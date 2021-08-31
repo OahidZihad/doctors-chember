@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import AppointmentsByDate from "../AppointmentsByDate/AppointmentsByDate";
 import Sidebar from "../../Shared/Sidebar/Sidebar";
+import "./Dashboard.css";
 
 const containerStyle = {
   backgroundColor: "#F4FDFB",
@@ -31,11 +32,11 @@ const Dashboard = () => {
   }, [selectedDate]);
   return (
     <section>
-      <div style={containerStyle} className="container-fluid row">
+      <div style={containerStyle} className="row">
         <div className="col-md-2">
           <Sidebar></Sidebar>
         </div>
-        <div className="col-md-5 d-flex justify-content-center">
+        <div className="col-md-5 d-flex justify-content-center calendar-height">
           <Calendar onChange={handleDateChange} value={new Date()} />
         </div>
         <div className="col-md-5">
