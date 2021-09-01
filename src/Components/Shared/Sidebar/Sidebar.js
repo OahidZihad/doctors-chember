@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,9 +11,25 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
+import { UserContext } from "../../../App";
 
 const Sidebar = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [isDoctor, setIsDoctor] = useState(false);
   const history = useHistory();
+
+  useEffect(() => {
+    fetch("http://localhost:5000/isDoctor", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: loggedInUser.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setIsDoctor(data);
+      });
+  }, []);
 
   const handleDashboard = () => {
     history.push("/doctor/dashboard");
@@ -53,42 +69,47 @@ const Sidebar = () => {
             <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
           </div>
         </li>
-        <li>
-          <div
-            style={{ cursor: "pointer" }}
-            className="text-white"
-            onClick={handleAppointment}
-          >
-            <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span>
+
+        {isDoctor && (
+          <div>
+            <li>
+              <div
+                style={{ cursor: "pointer" }}
+                className="text-white"
+                onClick={handleAppointment}
+              >
+                <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span>
+              </div>
+            </li>
+            <li>
+              <div
+                style={{ cursor: "pointer" }}
+                className="text-white"
+                onClick={handlePatients}
+              >
+                <FontAwesomeIcon icon={faUsers} /> <span>Todays Patients</span>
+              </div>
+            </li>
+            <li>
+              <div
+                style={{ cursor: "pointer" }}
+                className="text-white"
+                onClick={handlePrescriptions}
+              >
+                <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
+              </div>
+            </li>
+            <li>
+              <div
+                style={{ cursor: "pointer" }}
+                className="text-white"
+                onClick={handleAddDoctor}
+              >
+                <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
+              </div>
+            </li>
           </div>
-        </li>
-        <li>
-          <div
-            style={{ cursor: "pointer" }}
-            className="text-white"
-            onClick={handlePatients}
-          >
-            <FontAwesomeIcon icon={faUsers} /> <span>Todays Patients</span>
-          </div>
-        </li>
-        <li>
-          <div
-            style={{ cursor: "pointer" }}
-            className="text-white"
-            onClick={handlePrescriptions}
-          >
-            <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
-          </div>
-        </li>
-        <li>
-          <div
-            style={{ cursor: "pointer" }}
-            className="text-white"
-            onClick={handleAddDoctor}
-          >
-            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
-          </div>
-        </li>
+        )}
         <li>
           <Link to="/doctor/setting" className="text-white"></Link>
           <div

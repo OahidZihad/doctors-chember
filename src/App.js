@@ -14,7 +14,7 @@ import AddDoctor from "./Components/Dashboard/AddDoctor/AddDoctor";
 export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState();
+  const [loggedInUser, setLoggedInUser] = useState({});
   console.log(loggedInUser);
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -40,6 +40,12 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/doctor/addDoctor">
             <AddDoctor></AddDoctor>
+          </PrivateRoute>
+          <PrivateRoute path="/test">
+            <Test></Test>
+          </PrivateRoute>
+          <PrivateRoute path="/test2">
+            <Test2></Test2>
           </PrivateRoute>
         </Switch>
       </Router>

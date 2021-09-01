@@ -31,9 +31,7 @@ const AddDoctor = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data) {
-          alert("Doctor Added Successfully");
-        }
+        alert("Doctor Added Successfully");
         console.log(data);
       })
       .catch((error) => {
