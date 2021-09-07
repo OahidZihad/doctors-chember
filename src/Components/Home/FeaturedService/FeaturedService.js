@@ -4,7 +4,7 @@ import dentalCare from "../../../images/Dental Care.png";
 const FeaturedService = () => {
   return (
     <section className="d-flex justify-content-center mt-5 pt-5">
-      <div className="w-75 row px-5">
+      <div className="w-75 row">
         <div className="col-md-5">
           <img
             style={{ height: "400px", width: "350px" }}

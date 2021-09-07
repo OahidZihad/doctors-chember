@@ -1,10 +1,10 @@
 import React from "react";
-import "./TestimonialDetail.css";
 
 const TestimonialDetail = (props) => {
   const { description, img, name, address } = props.testimonial;
   return (
-    <div className="card col-md-4 card-testimonial">
+    <div className="col-md-4 mt-2">
+    <div className="card">
       <div className="card-body">
         <p className="card-text">{description}</p>
       </div>
@@ -22,6 +22,7 @@ const TestimonialDetail = (props) => {
           <p>{address}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
