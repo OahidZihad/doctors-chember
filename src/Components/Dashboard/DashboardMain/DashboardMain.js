@@ -80,7 +80,7 @@ const DashboardMain = () => {
               }}
             >
               <div className="ms-3 align-items-center justify-content-center d-flex">
-                <h1>05</h1>
+                <h1>{appointments.length}</h1>
               </div>
               <div className="ms-3 mt-2 align-items-center justify-content-center d-flex">
                 <p style={{ lineHeight: "20px" }}>
