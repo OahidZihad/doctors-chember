@@ -10,7 +10,7 @@ const Navbar = () => {
     history.push("/home");
   };
   const handleDashboard = () => {
-    history.push("/dashboard/appointment");
+    history.push("/doctor/dashboard");
   };
   return (
     <nav class="navbar navbar-expand-lg navbar-light">
