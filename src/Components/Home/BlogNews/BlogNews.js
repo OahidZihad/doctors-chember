@@ -47,7 +47,7 @@ const BlogNews = () => {
       <div className="d-flex justify-content-center mt-5">
         <div className="w-75 row">
           {blogData.map((blog) => (
-            <BlogNewsDetail blog={blog}></BlogNewsDetail>
+            <BlogNewsDetail key={blog.title} blog={blog}></BlogNewsDetail>
           ))}
         </div>
       </div>

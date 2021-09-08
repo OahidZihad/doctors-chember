@@ -58,9 +58,9 @@ const Testimonial = () => {
       </div>
       <div className="d-flex justify-content-center">
         <div className="w-75 row">
-            {testimonialData.map((testimonial) => (
-              <TestimonialDetail testimonial={testimonial}></TestimonialDetail>
-            ))}
+          {testimonialData.map((testimonial) => (
+            <TestimonialDetail testimonial={testimonial}></TestimonialDetail>
+          ))}
         </div>
       </div>
     </section>

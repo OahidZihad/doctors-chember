@@ -1,15 +1,27 @@
 import React from "react";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const OurDoctorsDetail = ({ doctor }) => {
+  console.log({ doctor });
   return (
     <div className="col-md-4 text-center">
       <div>
-        <img
-          style={{ height: "250px", width: "100%" }}
-          src={`http://localhost:5000/${doctor.img}`}
-          alt=""
-        />
+        {doctor.image ? (
+          <img
+            style={{ height: "250px", width: "90%" }}
+            className="img-fluid mt-3"
+            src={`data:image/png;base64,${doctor.image.img}`}
+            alt=""
+          />
+        ) : (
+          <img
+            style={{ height: "250px", width: "90%" }}
+            className="img-fluid mb-3"
+            src={`http://localhost:5000/${doctor.img}`}
+            alt=""
+          />
+        )}
         <h5 className="mt-2" style={{ fontSize: "16px", marginLeft: "20px" }}>
           {doctor.name}
         </h5>
@@ -21,11 +33,11 @@ const OurDoctorsDetail = ({ doctor }) => {
         <div>
           <FontAwesomeIcon
             style={{ color: "#6ACECE" }}
-            icon={doctor.icon}
+            icon={faEnvelope}
           ></FontAwesomeIcon>
         </div>
-        <div style={{ fontSize: "12px" }} className="text-secondary">
-          {doctor.phone}
+        <div style={{ fontSize: "14px" }} className="text-secondary ps-2">
+          {doctor.email}
         </div>
       </div>
     </div>

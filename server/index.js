@@ -47,6 +47,12 @@ client.connect((err) => {
     });
   });
 
+  app.get("/doctors", (req, res) => {
+    doctorCollection.find({}).toArray((err, documents) => {
+      res.send(documents);
+    });
+  });
+
   app.post("/addContactUs", (req, res) => {
     const contactDetails = req.body;
     console.log(contactDetails);
@@ -106,12 +112,6 @@ client.connect((err) => {
             res.send(result.insertedId);
           });
         });
-    });
-  });
-
-  app.get("/doctors", (req, res) => {
-    doctorCollection.find({}).toArray((err, documents) => {
-      res.send(documents);
     });
   });
 
