@@ -10,6 +10,7 @@ import Test2 from "./Components/Test2/Test2";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import Patients from "./Components/Dashboard/Patients/Patients";
 import AddDoctor from "./Components/Dashboard/AddDoctor/AddDoctor";
+import DashboardMain from "./Components/Dashboard/DashboardMain/DashboardMain";
 
 export const UserContext = createContext();
 
@@ -40,6 +41,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/doctor/addDoctor">
             <AddDoctor></AddDoctor>
+          </PrivateRoute>
+          <PrivateRoute path="/doctor/dashboard">
+            <DashboardMain></DashboardMain>
           </PrivateRoute>
           <PrivateRoute path="/test">
             <Test></Test>

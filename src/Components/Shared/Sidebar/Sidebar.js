@@ -36,7 +36,7 @@ const Sidebar = () => {
   };
 
   const handleAppointment = () => {
-    history.push("/doctor/appointment");
+    history.push("/dashboard/appointment");
   };
 
   const handlePatients = () => {
