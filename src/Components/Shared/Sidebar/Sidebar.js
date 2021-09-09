@@ -19,7 +19,7 @@ const Sidebar = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch("http://localhost:5000/isDoctor", {
+    fetch("https://mysterious-dawn-72386.herokuapp.com/isDoctor", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email: loggedInUser.email }),

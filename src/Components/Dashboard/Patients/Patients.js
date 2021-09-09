@@ -10,7 +10,7 @@ const Patients = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/appointmentsByDate", {
+    fetch("https://mysterious-dawn-72386.herokuapp.com/appointmentsByDate", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ date: selectedDate }),

@@ -12,7 +12,7 @@ const ContactUs = () => {
     console.log(data);
     data.date = new Date().toDateString();
 
-    fetch("http://localhost:5000/addContactUs", {
+    fetch("https://mysterious-dawn-72386.herokuapp.com/addContactUs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

@@ -18,7 +18,7 @@ const OurDoctorsDetail = ({ doctor }) => {
           <img
             style={{ height: "250px", width: "90%" }}
             className="img-fluid mb-3"
-            src={`http://localhost:5000/${doctor.img}`}
+            src={`https://mysterious-dawn-72386.herokuapp.com/${doctor.img}`}
             alt=""
           />
         )}
