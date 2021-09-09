@@ -6,11 +6,6 @@ const DashboardMain = () => {
 
   useEffect(() => {
     fetch("http://localhost:5000/appointments")
-      // , {
-      //   method: "POST",
-      //   headers: { "content-type": "application/json" },
-      //   body: JSON.stringify({email: loggedInUser.email}),
-      // })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,9 +19,6 @@ const DashboardMain = () => {
           <Sidebar></Sidebar>
         </div>
         <div className="col-md-10 row mt-4">
-          {/* <div className="ms-5 mt-2">
-            <h2>Dashboard</h2>
-          </div> */}
           <div className="col-md-2 ms-4 me-5 mt-2">
             <div
               className="d-flex justify-content-center"

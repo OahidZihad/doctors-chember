@@ -1,7 +1,6 @@
 import React from "react";
 
 const AppointmentsByDate = ({ appointment }) => {
-  //   const appointments = props.appointment;
   console.log(appointment);
   return (
     <div>
