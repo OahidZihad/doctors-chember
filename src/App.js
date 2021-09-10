@@ -1,12 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
 import Appointment from "./Components/Appointment/Appointment/Appointment";
 import Login from "./Components/Login/Login/Login";
 import { createContext, useState } from "react";
 import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
-import Test from "./Components/Test/Test";
-import Test2 from "./Components/Test2/Test2";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import Patients from "./Components/Dashboard/Patients/Patients";
 import AddDoctor from "./Components/Dashboard/AddDoctor/AddDoctor";
@@ -16,7 +14,7 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  console.log(loggedInUser);
+  console.log("app.js loggedInUser", loggedInUser);
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
@@ -44,12 +42,6 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/doctor/dashboard">
             <DashboardMain></DashboardMain>
-          </PrivateRoute>
-          <PrivateRoute path="/test">
-            <Test></Test>
-          </PrivateRoute>
-          <PrivateRoute path="/test2">
-            <Test2></Test2>
           </PrivateRoute>
         </Switch>
       </Router>

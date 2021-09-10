@@ -22,7 +22,7 @@ const Sidebar = () => {
     fetch("https://mysterious-dawn-72386.herokuapp.com/isDoctor", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email: loggedInUser.email }),
+      body: JSON.stringify({ email: sessionStorage.getItem("loggedInUser") }),
     })
       .then((res) => res.json())
       .then((data) => {

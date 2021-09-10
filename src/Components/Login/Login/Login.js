@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import loginBg from "../../../images/Group 140.png";
 import { useForm } from "react-hook-form";
 import firebase from "firebase/app";
@@ -14,7 +14,18 @@ if (!firebase.apps.length) {
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  console.log(loggedInUser);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("loggedInUser", loggedInUser.email);
+  });
+
+  // useEffect(() => {
+  //   const loggedInUserData = window.sessionStorage.getItem("loggedInUser");
+  //   console.log("loggedInUserData", loggedInUserData);
+  //   setLoggedInUser(loggedInUserData);
+  // });
+
+  console.log("current loggedInUser", loggedInUser);
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
@@ -62,7 +73,7 @@ const Login = () => {
         .auth()
         .createUserWithEmailAndPassword(user.email, user.password)
         .then((res) => {
-          console.log(res);
+          console.log("res", res);
           const newUserInfo = { ...user };
           newUserInfo.error = "";
           newUserInfo.success = true;
