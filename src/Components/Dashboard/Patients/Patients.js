@@ -13,7 +13,10 @@ const Patients = () => {
     fetch("https://mysterious-dawn-72386.herokuapp.com/appointmentsByDate", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ date: selectedDate }),
+      body: JSON.stringify({
+        date: selectedDate,
+        email: sessionStorage.getItem("loggedInUser"),
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
